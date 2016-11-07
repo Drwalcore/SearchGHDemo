@@ -58,55 +58,55 @@ class GitHubAPI {
         
             }
     
-//    class func startRepoFetch(settings: GitHubAPIConditions, successCallback: @escaping ([GitHubAPI]) -> Void, error: ((NSError?) -> Void)?) {
-//        
-//        let manager = AFHTTPRequestOperationManager()
-//        let params = queryParamsWithSettings(settings: settings)
-//        
-//        manager.get(gitRepoURL, parameters: params, success: { (operation ,responseObject) -> Void in
-//            
-//            if let fetchResults = responseObject["items"] as? NSArray {
-//                
-//                var repositories: [GitHubAPI] = []
-//                
-//                for singleResult in fetchResults as! [NSDictionary] {
-//                    repositories.append(GitHubApi(jsonResult: singleResult))
-//                }
-//                successCallback(repositories)
-//            }
-//            
-//        }, failure: { (operation, requestError) -> Void in
-//            
-//            if let errorCallback = error {
-//                errorCallback(requestError as NSError?)
-//            }
-//        })
-//    }
+    class func startRepoFetch(settings: GitHubAPIConditions, successCallback: @escaping ([GitHubAPI]) -> Void, error: ((NSError?) -> Void)?) {
+        
+        let manager = AFHTTPRequestOperationManager()
+        let params = queryParamsWithSettings(settings: settings)
+        
+        manager.get(gitRepoURL, parameters: params, success: { (operation ,responseObject) -> Void in
+            
+            if let fetchResults = (responseObject as AnyObject)["items"] as? NSArray {
+                
+                var repositories: [GitHubAPI] = []
+                
+                for singleResult in fetchResults as! [NSDictionary] {
+                    repositories.append(GitHubAPI(parsedJSON: singleResult))
+                }
+                successCallback(repositories)
+            }
+            
+        }, failure: { (operation, requestError) -> Void in
+            
+            if let errorCallback = error {
+                errorCallback(requestError as NSError?)
+            }
+        })
+    }
 
     
-//    private class func queryParamsWithSettings(settings: GitHubAPIConditions) -> [String: String] {
-//        
-//        var params: [String:String] = [:];
-//        if let clientId = clientId {
-//            params["client_id"] = clientId;
-//        }
-//        
-//        if let clientSecret = clientSecret {
-//            params["client_secret"] = clientSecret;
-//        }
-//        
-//        var q = "";
-//        
-//        if let searchString = settings.searchString {
-//            q = q + searchString;
-//        }
-//        
-//        q = q + " stars:>\(settings.minStars)";
-//        params["q"] = q;
-//        
-//        params["sort"] = "stars";
-//        params["order"] = "desc";
-//        
-//        return params;
-//    }
+    private class func queryParamsWithSettings(settings: GitHubAPIConditions) -> [String: String] {
+        
+        var params: [String:String] = [:];
+        if let clientId = clientId {
+            params["client_id"] = clientId;
+        }
+        
+        if let clientSecret = clientSecret {
+            params["client_secret"] = clientSecret;
+        }
+        
+        var q = "";
+        
+        if let searchString = settings.searchString {
+            q = q + searchString;
+        }
+        
+        q = q + " stars:>\(settings.minStars)";
+        params["q"] = q;
+        
+        params["sort"] = "stars";
+        params["order"] = "desc";
+        
+        return params;
+    }
 }
