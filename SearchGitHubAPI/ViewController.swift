@@ -69,6 +69,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
         searchBar = UISearchBar()
         searchBar.delegate = self
+        searchBar.placeholder = "Type to search GitHub repositories!"
         
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
@@ -83,7 +84,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             for repository in repositories {
                 
                 print("[Name: \(repository.name!)]" +
-                    "\n\t[Description: \(repository.description!)]" +
+                    "\n\t[Description: \(repository.description)]" +
                     "\n\t[Stars: \(repository.stars!)]" +
                     "\n\t[Owner: \(repository.ownerLogin!)]" +
                     "\n\t[Avatar: \(repository.ownerAvatarURL!)]")
