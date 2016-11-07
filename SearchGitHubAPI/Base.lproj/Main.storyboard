@@ -59,6 +59,7 @@
                                         <connections>
                                             <outlet property="descriptionLabel" destination="IWk-1j-X4P" id="ADZ-SH-KsG"/>
                                             <outlet property="nameLabel" destination="Tkf-b0-5oD" id="Yud-Fu-Smu"/>
+                                            <segue destination="Aa2-GO-kww" kind="show" id="8Re-kq-iaJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -80,6 +81,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="605.60000000000002" y="-583.3583208395803"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="yUf-5I-0LV">
+            <objects>
+                <viewController id="Aa2-GO-kww" customClass="DetailViewController" customModule="SearchGitHubAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Op7-F7-DkR"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZUR-ZE-80s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qsw-mF-Dsw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RJr-VB-nxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1511" y="-582"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w3q-m6-yba">

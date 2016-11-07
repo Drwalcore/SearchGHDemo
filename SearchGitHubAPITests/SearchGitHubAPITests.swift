@@ -38,7 +38,6 @@ class SearchGitHubAPITests: XCTestCase {
         
         let realURLString = "https://api.github.com/search/repositories"
         
-        
         let finalURL = NSURL(string: realURLString)
         let expectedResult = expectation(description: "Get \(finalURL)")
         
@@ -55,7 +54,7 @@ class SearchGitHubAPITests: XCTestCase {
                 
                 XCTAssertEqual(responseURL.absoluteString, finalURL!.absoluteString, "HTTP response URL should be equal to original URL")
 //              XCTAssertEqual(HTTPResponse.statusCode, 200, "HTTP response status code should be 200")
-//                XCTAssertNotEqual(HTTPResponse, 404, "Not found")
+//               XCTAssertNotEqual(HTTPResponse, 404, "Not found")
 //                XCTAssertNotEqual(HTTPResponse, 408, "Timeout from client")
                 XCTAssertEqual(MIMEType, "application/json", "HTTP respone content type should be json")
                 
