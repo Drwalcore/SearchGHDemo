@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var Avatar: UIImageView!
     @IBOutlet weak var OwnerName: UILabel!
-    @IBOutlet weak var FollowersNumber: UILabel!
+    @IBOutlet weak var StarsNumber: UILabel!
     @IBOutlet weak var StarImage: UIImageView!
     @IBOutlet weak var RepoName: UILabel!
     @IBOutlet weak var RepoDescription: UILabel!
