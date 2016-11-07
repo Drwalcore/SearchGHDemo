@@ -17,6 +17,7 @@ private let clientId: String? = nil
 private let clientSecret: String? = nil
 
 class GitHubAPI {
+    
     var name: String?
     var description: String?
     var ownerLogin: String?
@@ -72,6 +73,7 @@ class GitHubAPI {
                 for singleResult in fetchResults as! [NSDictionary] {
                     repositories.append(GitHubAPI(parsedJSON: singleResult))
                 }
+                
                 successCallback(repositories)
             }
             

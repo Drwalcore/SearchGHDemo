@@ -16,19 +16,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var searchPreRequisities = GitHubAPIConditions()
     var gitRepositories: [GitHubAPI]?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchBarSetUp()
         tableViewPreSetup()
+        
     }
     
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
+    
+//MARK: TableView Set Up and Options
     
     func tableViewPreSetup() {
     
@@ -64,6 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
     
+//MARK: Search Bar Setup and Options
     
     func searchBarSetUp() {
     
@@ -78,6 +83,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
     }
+    
     
     internal func searchInit(){
         
@@ -96,7 +102,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             
             MBProgressHUD.hide(for: self.view, animated: true)
+            
             self.tableView.reloadData()
+            
         }, error: { (error) -> Void in
             
             print(error!)
@@ -107,12 +115,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 
 extension ViewController: UISearchBarDelegate {
+    
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         
         searchBar.setShowsCancelButton(true, animated: true)
         return true;
     }
-    
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
         
@@ -131,6 +139,13 @@ extension ViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         searchInit()
     }
+    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        // to limit network activity, reload half a second after last key press.
+//        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(ViewController.searchInit), object: nil)
+//        self.perform(#selector(ViewController.searchInit), with: nil, afterDelay: 1.0)
+////        self.tableView.reloadData()
+//    }
 
     
 }
