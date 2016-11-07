@@ -86,26 +86,27 @@ class GitHubAPI {
     
     private class func queryParamsWithSettings(settings: GitHubAPIConditions) -> [String: String] {
         
-        var params: [String:String] = [:];
+        var params: [String:String] = [:]
+        
         if let clientId = clientId {
-            params["client_id"] = clientId;
+            params["client_id"] = clientId
         }
         
         if let clientSecret = clientSecret {
-            params["client_secret"] = clientSecret;
+            params["client_secret"] = clientSecret
         }
         
-        var q = "";
+        var q = ""
         
         if let searchString = settings.searchString {
-            q = q + searchString;
+            q = q + searchString
         }
         
-        q = q + " stars:>\(settings.minStars)";
-        params["q"] = q;
+        q = q + " stars:>\(settings.minStars)"
         
-        params["sort"] = "stars";
-        params["order"] = "desc";
+        params["q"] = q
+        params["sort"] = "stars"
+        params["order"] = "desc"
         
         return params;
     }
