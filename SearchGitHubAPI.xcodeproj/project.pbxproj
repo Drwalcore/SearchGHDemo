@@ -82,6 +82,7 @@
 		505CE58D1DD02875002BA48F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				50F2C3631DCC1D5A000B23CA /* AppDelegate.swift */,
 				50F2C36D1DCC1D5A000B23CA /* Assets.xcassets */,
 				50F2C3721DCC1D5A000B23CA /* Info.plist */,
 				50F2C36A1DCC1D5A000B23CA /* SearchGitHubAPI.xcdatamodeld */,
@@ -108,6 +109,15 @@
 			name = GitHub;
 			sourceTree = "<group>";
 		};
+		505CE5971DD04B37002BA48F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50F2C3651DCC1D5A000B23CA /* ViewController.swift */,
+				505CE5951DD041B8002BA48F /* CustomGITCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		50F2C3571DCC1D5A000B23CA = {
 			isa = PBXGroup;
 			children = (
@@ -131,9 +141,7 @@
 		50F2C3621DCC1D5A000B23CA /* SearchGitHubAPI */ = {
 			isa = PBXGroup;
 			children = (
-				50F2C3631DCC1D5A000B23CA /* AppDelegate.swift */,
-				50F2C3651DCC1D5A000B23CA /* ViewController.swift */,
-				505CE5951DD041B8002BA48F /* CustomGITCell.swift */,
+				505CE5971DD04B37002BA48F /* Views */,
 				505CE5911DD0291E002BA48F /* GitHub */,
 				505CE58E1DD02888002BA48F /* Storyboards */,
 				505CE58D1DD02875002BA48F /* Supporting Files */,

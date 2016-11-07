@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var searchBar: UISearchBar!
     var searchPreRequisities = GitHubAPIConditions()
-    var GitRepositories: [GitHubAPI]?
+    var gitRepositories: [GitHubAPI]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         var reusableCell = tableView.dequeueReusableCell(withIdentifier: "CustomGITCell", for: indexPath) as! CustomGITCell
         
+        let gitRepository = gitRepositories![indexPath.row]
+        
+        reusableCell.nameLabel.text = gitRepository.name!
+        reusableCell.descriptionLabel.text = gitRepository.description!
         
         return reusableCell
     
@@ -50,9 +54,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let GitRepositories = GitRepositories {
+        if let gitRepositories = gitRepositories {
             
-            return GitRepositories.count
+            return gitRepositories.count
         } else {
             
             return 0
@@ -75,7 +79,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
         GitHubAPI.startRepoFetch(settings: searchPreRequisities, successCallback: { (repositories) -> Void in
-            self.GitRepositories = repositories
+            self.gitRepositories = repositories
             for repository in repositories {
                 
                 print("[Name: \(repository.name!)]" +
