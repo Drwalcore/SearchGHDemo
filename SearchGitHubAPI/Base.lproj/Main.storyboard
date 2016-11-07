@@ -34,13 +34,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkf-b0-5oD" userLabel="Name Label">
-                                                    <rect key="frame" x="18" y="8" width="272" height="19.5"/>
+                                                    <rect key="frame" x="9" y="8" width="272" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWk-1j-X4P" userLabel="Description Label">
-                                                    <rect key="frame" x="18" y="32.5" width="252" height="35"/>
+                                                    <rect key="frame" x="8" y="29.5" width="272" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -48,12 +48,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IWk-1j-X4P" secondAttribute="bottom" id="9A1-gW-mlp"/>
-                                                <constraint firstItem="Tkf-b0-5oD" firstAttribute="trailing" secondItem="ZX4-qW-8EW" secondAttribute="trailingMargin" constant="10" id="Ccp-rx-s2F"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="IWk-1j-X4P" secondAttribute="trailing" constant="10" id="ZCC-Ln-Hud"/>
-                                                <constraint firstItem="IWk-1j-X4P" firstAttribute="top" secondItem="Tkf-b0-5oD" secondAttribute="bottom" constant="5" id="aOD-zN-9vH"/>
+                                                <constraint firstItem="Tkf-b0-5oD" firstAttribute="trailing" secondItem="ZX4-qW-8EW" secondAttribute="trailingMargin" constant="1" id="Ccp-rx-s2F"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="IWk-1j-X4P" secondAttribute="trailing" id="ZCC-Ln-Hud"/>
+                                                <constraint firstItem="IWk-1j-X4P" firstAttribute="top" secondItem="Tkf-b0-5oD" secondAttribute="bottom" constant="2" id="aOD-zN-9vH"/>
                                                 <constraint firstItem="Tkf-b0-5oD" firstAttribute="top" secondItem="ZX4-qW-8EW" secondAttribute="topMargin" id="fiL-H7-wBS"/>
-                                                <constraint firstItem="Tkf-b0-5oD" firstAttribute="leading" secondItem="ZX4-qW-8EW" secondAttribute="leadingMargin" constant="10" id="iQb-LK-FMY"/>
-                                                <constraint firstItem="IWk-1j-X4P" firstAttribute="leading" secondItem="ZX4-qW-8EW" secondAttribute="leadingMargin" constant="10" id="s6w-CA-XvC"/>
+                                                <constraint firstItem="Tkf-b0-5oD" firstAttribute="leading" secondItem="ZX4-qW-8EW" secondAttribute="leadingMargin" constant="1" id="iQb-LK-FMY"/>
+                                                <constraint firstItem="IWk-1j-X4P" firstAttribute="leading" secondItem="ZX4-qW-8EW" secondAttribute="leadingMargin" id="s6w-CA-XvC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
