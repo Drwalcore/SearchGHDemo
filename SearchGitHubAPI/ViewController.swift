@@ -60,7 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
     
-        
+    
     func searchBarSetUp() {
     
         searchBar = UISearchBar()
@@ -70,7 +70,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         navigationItem.titleView = searchBar
     }
     
-    private func searchInit(){
+    internal func searchInit(){
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
@@ -121,7 +121,7 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchPreRequisities.searchString = searchBar.text
         searchBar.resignFirstResponder()
-//        doSearch()
+        searchInit()
     }
 
     
