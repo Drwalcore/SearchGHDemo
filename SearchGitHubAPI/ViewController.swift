@@ -41,12 +41,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var reusableCell = tableView.dequeueReusableCell(withIdentifier: "CustomGITCell", for: indexPath) as! CustomGITCell
+        var reusableCell = self.tableView.dequeueReusableCell(withIdentifier: "CustomGITCell", for: indexPath) as! CustomGITCell
         
         let gitRepository = gitRepositories![indexPath.row]
         
-        reusableCell.nameLabel.text = gitRepository.name!
-        reusableCell.descriptionLabel.text = gitRepository.description!
+        reusableCell.nameLabel?.text = gitRepository.name!
+        reusableCell.descriptionLabel?.text = gitRepository.description!
         
         return reusableCell
     
