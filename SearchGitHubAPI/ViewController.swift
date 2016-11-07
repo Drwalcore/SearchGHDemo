@@ -71,6 +71,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         searchBar.delegate = self
         searchBar.placeholder = "Type to search GitHub repositories!"
         
+        searchBar.autocorrectionType = .no
+        searchBar.autocapitalizationType = .none
+        searchBar.spellCheckingType = .no
+        
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
     }
@@ -88,8 +92,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     "\n\t[Stars: \(repository.stars!)]" +
                     "\n\t[Owner: \(repository.ownerLogin!)]" +
                     "\n\t[Avatar: \(repository.ownerAvatarURL!)]")
-                //var singleRepo = ["name" : repo.name, "description" : repo.description]  as? NSDictionary
-                //self.repositories = singleRepo as? [NSDictionary]
+                
             }
             
             MBProgressHUD.hide(for: self.view, animated: true)
