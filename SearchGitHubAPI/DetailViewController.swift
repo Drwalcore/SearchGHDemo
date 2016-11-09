@@ -16,7 +16,27 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var StarImage: UIImageView!
     @IBOutlet weak var RepoName: UILabel!
     @IBOutlet weak var RepoDescription: UILabel!
+    @IBOutlet weak var linkButton: UIButton!
+    
+    private var user: User? = nil
+    private var repo: GitHubAPI? = nil
 
+    func update(withUser user: User) {
+        self.user = user
+    }
+    
+    func update(withRepository repo: GitHubAPI) {
+        self.repo = repo
+    }
+    
+    func downloadImage(link: String?) {
+        guard let linkVal = link else {
+            return
+        }
+        let url = URL(string: linkVal)
+        Avatar.setImageWith(url!)
+    }
+    
     
     
     override func viewDidLoad() {
