@@ -25,12 +25,20 @@ class SearchGitHubAPITests: XCTestCase {
         XCTAssertNotNil(viewController.tableView, "Table view shouldn't be nil")
     }
     
-    func testUsersFetchOperation() {
+    func testRandomLettersFetchOperation() {
         let mockDataProvider = MockDataProvider()
         viewController.dataProvider = mockDataProvider
         viewController.startSearch(withText: "tt")
         XCTAssert(mockDataProvider.searchStarted, "Search should start")
     }
+    
+    func testRealUserNameFetchOperation() {
+        let mockDataProvider = MockDataProvider()
+        viewController.dataProvider = mockDataProvider
+        viewController.startSearch(withText: "Drwalcore")
+        XCTAssert(mockDataProvider.searchStarted, "Search should start")
+    }
+
     
     func testConnection(){
         
