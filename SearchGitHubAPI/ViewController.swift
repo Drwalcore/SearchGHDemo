@@ -11,10 +11,20 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    public var dataProvider: MockDataProviderProtocol?
+    
+    enum CellType: String {
+        
+        case repository
+        case user
+    }
     
     var searchBar: UISearchBar!
     var searchPreRequisities = GitHubAPIConditions()
-    var gitRepositories: [GitHubAPI]?
+    var searchUsersParameters = GitHubAPIUsers()
+    var cellsData: [[CellType: AnyObject]] = []
+    private var requestOperations: [AFHTTPRequestOperation] = []
+    var objectForDetail: [CellType: AnyObject]?
     
     
     override func viewDidLoad() {
@@ -45,13 +55,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var reusableCell = self.tableView.dequeueReusableCell(withIdentifier: "CustomGITCell", for: indexPath) as! CustomGITCell
+        let reusableCell = self.tableView.dequeueReusableCell(withIdentifier: "CustomGITCell", for: indexPath) as! CustomGITCell
         
-        let gitRepository = gitRepositories![indexPath.row]
-        
-        reusableCell.nameLabel?.text = gitRepository.name!
-        reusableCell.descriptionLabel?.text = gitRepository.description!
-        
+        let cellData = cellsData[indexPath.row]
+        switch cellData.keys.first! {
+        case .repository:
+            let repo = cellData.values.first as! GitHubAPI
+            reusableCell.nameLabel?.text = repo.name
+            reusableCell.descriptionLabel?.text = repo.description
+        case .user:
+            let user = cellData.values.first as! User
+            reusableCell.nameLabel?.text = user.login
+            reusableCell.descriptionLabel?.text = user.repoURL
+        }
+        reusableCell.cellTypeLabel.text = cellData.keys.first!.rawValue
+
         return reusableCell
     
     }
@@ -68,11 +86,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//        performSegue(withIdentifier: "DetailSegue", sender: nil)
-//        
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        objectForDetail = cellsData[indexPath.row]
+        performSegue(withIdentifier: "DetailSegue", sender: nil)
+        
+    }
     
 //MARK: Search Bar Setup and Options
     
@@ -116,6 +134,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print(error!)
             
         })
+        requestOperations.append(operation)
+    }
+    
+    func searchUsers() {
+        let operation = GitHubAPI.startUsersFetch(settings: searchUsersParameters, successCallback: { (users) in
+            for user in users {
+                self.cellsData.append([CellType.user: user])
+                print("login: \(user.login)")
+                print("url: \(user.repoURL)")
+            }
+            self.tableView.reloadData()
+        }) { (error) in
+            print(error)
+        }
+        requestOperations.append(operation)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! DetailViewController
+        if let object = objectForDetail {
+            switch object.keys.first! as CellType {
+            case .repository:
+                vc.update(withRepository: object.values.first! as! GitHubAPI)
+            case .user:
+                vc.update(withUser: object.values.first! as! User)
+            }
+        }
     }
 }
 
@@ -123,7 +168,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 extension ViewController: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        
         searchBar.setShowsCancelButton(true, animated: true)
         return true;
     }
@@ -141,17 +185,15 @@ extension ViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchPreRequisities.searchString = searchBar.text
         searchBar.resignFirstResponder()
-        searchInit()
+        startSearch(withText: searchBar.text ?? "")
     }
     
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        // to limit network activity, reload half a second after last key press.
-//        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(ViewController.searchInit), object: nil)
-//        self.perform(#selector(ViewController.searchInit), with: nil, afterDelay: 1.0)
-////        self.tableView.reloadData()
-//    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        startSearch(withText: searchText)
 
+    }
+
+    
     
 }

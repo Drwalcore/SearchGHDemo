@@ -2,35 +2,34 @@
 //  SearchGitHubAPITests.swift
 //  SearchGitHubAPITests
 //
-//  Created by Michał Czerniakowski on 04.11.2016.
+//  Created by Michał Czerniakowski on 09.11.16.
 //  Copyright © 2016 Michał Czerniakowski. All rights reserved.
 //
 
 import XCTest
 @testable import SearchGitHubAPI
+import UIKit
 
 class SearchGitHubAPITests: XCTestCase {
+
+    var viewController: ViewController!
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testUIForNil() {
+        XCTAssertNil(viewController.tableView, "Table view should be nil")
+        let _ = viewController.view
+        XCTAssertNotNil(viewController.tableView, "Table view shouldn't be nil")
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testUsersFetchOperation() {
+        let mockDataProvider = MockDataProvider()
+        viewController.dataProvider = mockDataProvider
+        viewController.startSearch(withText: "tt")
+        XCTAssert(mockDataProvider.searchStarted, "Search should start")
     }
     
     func testConnection(){
@@ -53,9 +52,9 @@ class SearchGitHubAPITests: XCTestCase {
                 let MIMEType = HTTPResponse.mimeType{
                 
                 XCTAssertEqual(responseURL.absoluteString, finalURL!.absoluteString, "HTTP response URL should be equal to original URL")
-//              XCTAssertEqual(HTTPResponse.statusCode, 200, "HTTP response status code should be 200")
-//               XCTAssertNotEqual(HTTPResponse, 404, "Not found")
-//                XCTAssertNotEqual(HTTPResponse, 408, "Timeout from client")
+                //              XCTAssertEqual(HTTPResponse.statusCode, 200, "HTTP response status code should be 200")
+                //               XCTAssertNotEqual(HTTPResponse, 404, "Not found")
+                //                XCTAssertNotEqual(HTTPResponse, 408, "Timeout from client")
                 XCTAssertEqual(MIMEType, "application/json", "HTTP respone content type should be json")
                 
             }
@@ -77,6 +76,21 @@ class SearchGitHubAPITests: XCTestCase {
             task.cancel()
         }
         
+    }
+
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    
+}
+
+class MockDataProvider: MockDataProviderProtocol {
+    var searchStarted = false
+
+    func startSearch() {
+        searchStarted = true
     }
     
 }
