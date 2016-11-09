@@ -41,24 +41,48 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+            if user != nil {
+                setUserInfo()
+            } else {
+                setRepoInfo()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func setUserInfo() {
+        guard let userVal = user else {
+            return
+        }
+        
+        RepoDescription.isHidden = true
+        RepoName.isHidden = true
+        StarImage.isHidden = true
+        StarsNumber.isHidden = true
+        OwnerName.text = userVal.login
+        linkButton.setTitle(userVal.repoURL ?? "", for: .normal)
+        downloadImage(link: userVal.avatarURL)
     }
-    */
-
+    
+    private func setRepoInfo() {
+        
+        guard let repoVal = repo else {
+            return
+        }
+        
+        linkButton.isHidden = true
+        RepoDescription.text = repoVal.description
+        StarsNumber.text = "\(repoVal.stars ?? 0)"
+        RepoName.text = repoVal.name
+        OwnerName.text = repoVal.ownerLogin
+        downloadImage(link: repoVal.ownerAvatarURL)
+    }
+    
+    @IBAction func linkButtonPressed(_ sender: AnyObject) {
+        
+        let link = URL(string: user!.repoURL!)
+        UIApplication.shared.open(link!,
+                                  options: [:],
+                                  completionHandler: nil)
+    }
+    
 }
