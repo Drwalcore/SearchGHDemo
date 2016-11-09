@@ -113,10 +113,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
-        GitHubAPI.startRepoFetch(settings: searchPreRequisities, successCallback: { (repositories) -> Void in
-            self.gitRepositories = repositories
+        let operation = GitHubAPI.startRepoFetch(settings: searchPreRequisities, successCallback: { (repositories) -> Void in
+
             for repository in repositories {
-                
+                self.cellsData.append([CellType.repository: repository])
                 print("[Name: \(repository.name!)]" +
                     "\n\t[Description: \(repository.description)]" +
                     "\n\t[Stars: \(repository.stars!)]" +
@@ -124,15 +124,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     "\n\t[Avatar: \(repository.ownerAvatarURL!)]")
                 
             }
-            
-            MBProgressHUD.hide(for: self.view, animated: true)
-            
+            DispatchQueue.main.async {
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
             self.tableView.reloadData()
             
         }, error: { (error) -> Void in
             
+            DispatchQueue.main.async {
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
             print(error!)
-            
+
         })
         requestOperations.append(operation)
     }
