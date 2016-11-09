@@ -76,14 +76,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let gitRepositories = gitRepositories {
-            
-            return gitRepositories.count
-        } else {
-            
-            return 0
+        return cellsData.count
+    }
+    
+    
+    public func startSearch(withText text: String) {
+        MBProgressHUD.hide(for: self.view, animated: true)
+        for operation in requestOperations {
+            operation.cancel()
         }
-
+        searchPreRequisities.searchString = text
+        searchUsersParameters.searchString = text
+        cellsData = []
+        searchInit()
+        searchUsers()
+        dataProvider?.startSearch()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
