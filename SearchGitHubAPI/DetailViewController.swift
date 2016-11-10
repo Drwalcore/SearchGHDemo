@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
 
     @IBOutlet weak var Avatar: UIImageView!
     @IBOutlet weak var OwnerName: UILabel!
@@ -38,9 +39,10 @@ class DetailViewController: UIViewController {
     }
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateLayout()
         
             if user != nil {
                 setUserInfo()
@@ -71,12 +73,20 @@ class DetailViewController: UIViewController {
         
         linkButton.isHidden = true
         RepoDescription.text = repoVal.description
-        StarsNumber.text = "\(repoVal.stars ?? 0)"
-        RepoName.text = repoVal.name
+        StarsNumber.text = "\(repoVal.stars ?? 0)"+" x"
+        RepoName.text = "Repository name: " + (repoVal.name)!
         OwnerName.text = repoVal.ownerLogin
         downloadImage(link: repoVal.ownerAvatarURL)
     }
     
+    private func updateLayout(){
+        RepoDescription.adjustsFontSizeToFitWidth = true
+        RepoName.adjustsFontSizeToFitWidth = true
+        OwnerName.adjustsFontSizeToFitWidth = true
+        
+    
+    }
+
     @IBAction func linkButtonPressed(_ sender: AnyObject) {
         
         let link = URL(string: user!.repoURL!)
