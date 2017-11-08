@@ -671,7 +671,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 37665QUBTY;
-				INFOPLIST_FILE = SearchGitHubAPITests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.SearchGitHubAPITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -687,7 +687,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 37665QUBTY;
-				INFOPLIST_FILE = SearchGitHubAPITests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.SearchGitHubAPITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
