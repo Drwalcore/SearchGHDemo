@@ -50,6 +50,16 @@ workflows:
                - content: |-
                    bundle install
                    bundle exec danger
+    - swiftlint@0.3.1:
+        inputs:
+        - lint_config_file: "$BITRISE_SOURCE_DIR/Sources/.swiftlint.yml"
+        - linting_path: "$BITRISE_SOURCE_DIR/Sources"
+        title: Swiftlint for Sources
+    - swiftlint@0.3.1:
+        title: Swiftlint for Tests
+        inputs:
+        - lint_config_file: "$BITRISE_SOURCE_DIR/Tests/.swiftlint.yml"
+        - linting_path: "$BITRISE_SOURCE_DIR/Tests"
     - codecov@1.1.4:
         inputs:
         - other_options: " -J 'CCNumberValidator'"
