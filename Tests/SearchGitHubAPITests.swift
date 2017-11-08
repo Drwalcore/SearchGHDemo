@@ -1,5 +1,5 @@
-import XCTest
 @testable import SearchGitHubAPI
+import XCTest
 import UIKit
 
 class SearchGitHubAPITests: XCTestCase {

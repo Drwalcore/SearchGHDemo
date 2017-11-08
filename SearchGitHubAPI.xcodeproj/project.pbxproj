@@ -637,7 +637,7 @@
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcode.SearchGitHubAPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -655,7 +655,7 @@
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcode.SearchGitHubAPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
