@@ -1,6 +1,9 @@
 import Foundation
 import AFNetworking
 
+// swiftlint:disable force_cast
+// swiftlint:disable shorthand_operator
+
 let gitRepoURL = "https://api.github.com/search/repositories"
 let gitUserURL = "https://api.github.com/search/users"
 

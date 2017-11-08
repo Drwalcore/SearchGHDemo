@@ -1,5 +1,7 @@
 import UIKit
 
+// swiftlint:disable identifier_name
+
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var Avatar: UIImageView!

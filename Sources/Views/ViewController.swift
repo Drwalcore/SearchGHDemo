@@ -2,6 +2,8 @@ import UIKit
 import AFNetworking
 import MBProgressHUD
 
+// swiftlint:disable force_cast
+
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
