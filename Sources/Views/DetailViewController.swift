@@ -1,7 +1,6 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
 
     @IBOutlet weak var Avatar: UIImageView!
     @IBOutlet weak var OwnerName: UILabel!
@@ -10,18 +9,18 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var RepoName: UILabel!
     @IBOutlet weak var RepoDescription: UILabel!
     @IBOutlet weak var linkButton: UIButton!
-    
-    private var user: User? = nil
-    private var repo: GitHubAPI? = nil
+
+    private var user: User?
+    private var repo: GitHubAPI?
 
     func update(withUser user: User) {
         self.user = user
     }
-    
+
     func update(withRepository repo: GitHubAPI) {
         self.repo = repo
     }
-    
+
     func downloadImage(link: String?) {
         guard let linkVal = link else {
             return
@@ -29,25 +28,24 @@ class DetailViewController: UIViewController {
         let url = URL(string: linkVal)
         Avatar.setImageWith(url!)
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         updateLayout()
-        
+
             if user != nil {
                 setUserInfo()
             } else {
                 setRepoInfo()
         }
     }
-    
+
     private func setUserInfo() {
         guard let userVal = user else {
             return
         }
-        
+
         RepoDescription.isHidden = true
         RepoName.isHidden = true
         StarImage.isHidden = true
@@ -56,13 +54,13 @@ class DetailViewController: UIViewController {
         linkButton.setTitle(userVal.repoURL ?? "", for: .normal)
         downloadImage(link: userVal.avatarURL)
     }
-    
+
     private func setRepoInfo() {
-        
+
         guard let repoVal = repo else {
             return
         }
-        
+
         linkButton.isHidden = true
         RepoDescription.text = repoVal.description
         StarsNumber.text = "\(repoVal.stars ?? 0)"+" x"
@@ -70,21 +68,20 @@ class DetailViewController: UIViewController {
         OwnerName.text = repoVal.ownerLogin
         downloadImage(link: repoVal.ownerAvatarURL)
     }
-    
-    private func updateLayout(){
+
+    private func updateLayout() {
         RepoDescription.adjustsFontSizeToFitWidth = true
         RepoName.adjustsFontSizeToFitWidth = true
         OwnerName.adjustsFontSizeToFitWidth = true
-        
-    
+
     }
 
     @IBAction func linkButtonPressed(_ sender: AnyObject) {
-        
+
         let link = URL(string: user!.repoURL!)
         UIApplication.shared.open(link!,
                                   options: [:],
                                   completionHandler: nil)
     }
-    
+
 }

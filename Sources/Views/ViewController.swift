@@ -6,51 +6,47 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     public var dataProvider: MockDataProviderProtocol?
-    
+
     enum CellType: String {
-        
+
         case repository
         case user
     }
-    
+
     var searchBar: UISearchBar!
     var searchPreRequisities = GitHubAPIConditions()
     var searchUsersParameters = GitHubAPIUsers()
     var cellsData: [[CellType: AnyObject]] = []
     private var requestOperations: [AFHTTPRequestOperation] = []
     var objectForDetail: [CellType: AnyObject]?
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         searchBarSetUp()
         tableViewPreSetup()
-        
+
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
+
     }
-    
-    
-//MARK: TableView Set Up and Options
-    
+
+// MARK: TableView Set Up and Options
+
     func tableViewPreSetup() {
-    
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
     }
-    
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let reusableCell = self.tableView.dequeueReusableCell(withIdentifier: "CustomGITCell", for: indexPath) as! CustomGITCell
-        
+
         let cellData = cellsData[indexPath.row]
         switch cellData.keys.first! {
         case .repository:
@@ -65,15 +61,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         reusableCell.cellTypeLabel.text = cellData.keys.first!.rawValue
 
         return reusableCell
-    
+
     }
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellsData.count
     }
-    
-    
+
     public func startSearch(withText text: String) {
         MBProgressHUD.hide(for: self.view, animated: true)
         for operation in requestOperations {
@@ -86,35 +80,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         searchUsers()
         dataProvider?.startSearch()
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         objectForDetail = cellsData[indexPath.row]
         performSegue(withIdentifier: "DetailSegue", sender: nil)
-        
+
     }
-    
-//MARK: Search Bar Setup and Options
-    
+
+// MARK: Search Bar Setup and Options
+
     func searchBarSetUp() {
-    
+
         searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.placeholder = "Type to search GitHub repositories!"
-        
+
         searchBar.autocorrectionType = .no
         searchBar.autocapitalizationType = .none
         searchBar.spellCheckingType = .no
-        
+
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
     }
-    
-    
-    internal func searchInit(){
-        
+
+    internal func searchInit() {
+
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        
-        let operation = GitHubAPI.startRepoFetch(settings: searchPreRequisities, successCallback: { (repositories) -> Void in
+
+        let operation = GitHubAPI.startRepoFetch(settings: searchPreRequisities, successCallback: { repositories -> Void in
 
             for repository in repositories {
                 self.cellsData.append([CellType.repository: repository])
@@ -123,15 +116,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     "\n\t[Stars: \(repository.stars!)]" +
                     "\n\t[Owner: \(repository.ownerLogin!)]" +
                     "\n\t[Avatar: \(repository.ownerAvatarURL!)]")
-                
+
             }
             DispatchQueue.main.async {
                 MBProgressHUD.hide(for: self.view, animated: true)
             }
             self.tableView.reloadData()
-            
-        }, error: { (error) -> Void in
-            
+
+        }, error: { error -> Void in
+
             DispatchQueue.main.async {
                 MBProgressHUD.hide(for: self.view, animated: true)
             }
@@ -140,21 +133,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         })
         requestOperations.append(operation)
     }
-    
+
     func searchUsers() {
-        let operation = GitHubAPI.startUsersFetch(settings: searchUsersParameters, successCallback: { (users) in
+        let operation = GitHubAPI.startUsersFetch(settings: searchUsersParameters, successCallback: { users in
             for user in users {
                 self.cellsData.append([CellType.user: user])
                 print("login: \(user.login)")
                 print("url: \(user.repoURL)")
             }
             self.tableView.reloadData()
-        }) { (error) in
+        }) { error in
             print(error)
         }
         requestOperations.append(operation)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! DetailViewController
         if let object = objectForDetail {
@@ -168,36 +161,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 }
 
-
 extension ViewController: UISearchBarDelegate {
-    
+
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         searchBar.setShowsCancelButton(true, animated: true)
-        return true;
+        return true
     }
-    
+
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-        
+
         searchBar.setShowsCancelButton(false, animated: true)
-        return true;
+        return true
     }
-    
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
+
         searchBar.text = ""
         searchBar.resignFirstResponder()
     }
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         startSearch(withText: searchBar.text ?? "")
     }
-    
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         startSearch(withText: searchText)
 
     }
 
-    
-    
 }
