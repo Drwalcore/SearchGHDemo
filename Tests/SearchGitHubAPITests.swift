@@ -1,11 +1,3 @@
-//
-//  SearchGitHubAPITests.swift
-//  SearchGitHubAPITests
-//
-//  Created by Michał Czerniakowski on 09.11.16.
-//  Copyright © 2016 Michał Czerniakowski. All rights reserved.
-//
-
 import XCTest
 @testable import SearchGitHubAPI
 import UIKit

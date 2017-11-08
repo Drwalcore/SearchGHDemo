@@ -1,14 +1,4 @@
-//
-//  GitHubAPI.swift
-//  SearchGitHubAPI
-//
-//  Created by Michał Czerniakowski on 07.11.2016.
-//  Copyright © 2016 Michał Czerniakowski. All rights reserved.
-//
-
 import Foundation
-
-//For Unit Test purposes only - they're not private
 
 let gitRepoURL = "https://api.github.com/search/repositories"
 let gitUserURL = "https://api.github.com/search/users"

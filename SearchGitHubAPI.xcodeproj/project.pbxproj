@@ -153,8 +153,8 @@
 				B329C52F71292D1775B63EDC /* Frameworks */,
 				0BDD40C96C78C9136228B343 /* Pods */,
 				50F2C3611DCC1D5A000B23CA /* Products */,
-				50F2C3621DCC1D5A000B23CA /* SearchGitHubAPI */,
-				F5F0320E1DD3A97E00374CC4 /* SearchGitHubAPITests */,
+				50F2C3621DCC1D5A000B23CA /* Sources */,
+				F5F0320E1DD3A97E00374CC4 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,7 +167,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		50F2C3621DCC1D5A000B23CA /* SearchGitHubAPI */ = {
+		50F2C3621DCC1D5A000B23CA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				505CE5911DD0291E002BA48F /* GitHub */,
@@ -176,7 +176,7 @@
 				505CE58D1DD02875002BA48F /* Supporting Files */,
 				505CE5971DD04B37002BA48F /* Views */,
 			);
-			path = SearchGitHubAPI;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		B329C52F71292D1775B63EDC /* Frameworks */ = {
@@ -196,13 +196,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		F5F0320E1DD3A97E00374CC4 /* SearchGitHubAPITests */ = {
+		F5F0320E1DD3A97E00374CC4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				F5F032111DD3A97E00374CC4 /* Info.plist */,
 				F5F0320F1DD3A97E00374CC4 /* SearchGitHubAPITests.swift */,
 			);
-			path = SearchGitHubAPITests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
