@@ -1,9 +1,60 @@
-platform :ios, '9.0'
+platform :ios, '10.3'
 inhibit_all_warnings!
 
-target 'SearchGitHubAPI' do
-    
-pod 'AFNetworking', '~> 2.6'
-pod 'MBProgressHUD'
-
+def di_pods
+    pod 'Swinject', '~> 2.1.1'
+    pod 'SwinjectAutoregistration', '~> 2.1.1'
 end
+
+def helper_pods
+    pod 'PromiseKit', '~> 4.5.0'
+    pod 'SwiftLint', '~> 0.23.1'
+end
+
+def networking_pods
+    pod 'Alamofire', '~> 4.5.1'
+    pod 'AFNetworking', '~> 2.6.3'
+end
+
+def test_pods
+    pod 'Nimble-Snapshots', '~> 6.3.0'
+    pod 'Nimble', '~> 7.0'
+    pod 'Quick', '~> 1.2'
+end
+
+def ui_pods
+    pod 'HexColors', '~> 5.0.1'
+    pod 'MBProgressHUD', '~> 1.0.0'
+    pod 'Pastel', '~> 0.3.0'
+    pod 'Reveal-SDK', :configurations => ['Debug']
+    pod 'SnapKit', '~> 4.0.0'
+    pod 'ScrollViewKeyboardAvoider', '~> 1.0'
+end
+
+target 'SearchGitHubAPI' do
+    use_frameworks!
+    di_pods
+    helper_pods
+    networking_pods
+    ui_pods
+
+    target 'SearchGitHubAPITests' do
+        inherit! :search_paths
+        test_pods
+    end
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        case target.name
+            when 'HexColors'
+            swift_version = '3.0'
+            else
+            swift_version = '4.0'
+        end
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = swift_version
+        end
+    end
+end
+
