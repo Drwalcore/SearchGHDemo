@@ -50,7 +50,7 @@
 		505CE5A21DD11B43002BA48F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		505CE5A51DD11C39002BA48F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		509F6E091FB84AF60084F7A8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		509F6E0C1FB84B900084F7A8 /* ForceCastSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForceCastSpec.swift; path = ForceCastSpec.swift; sourceTree = "<group>"; };
+		509F6E0C1FB84B900084F7A8 /* ForceCastSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceCastSpec.swift; sourceTree = "<group>"; };
 		509F6E0F1FB84C060084F7A8 /* ForceCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceCast.swift; sourceTree = "<group>"; };
 		50F2C3601DCC1D5A000B23CA /* SearchGitHubAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchGitHubAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F2C3631DCC1D5A000B23CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -285,12 +285,13 @@
 				TargetAttributes = {
 					50F2C35F1DCC1D5A000B23CA = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 45Z84TYU2C;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					F5F0320C1DD3A97D00374CC4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 37665QUBTY;
+						DevelopmentTeam = 45Z84TYU2C;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 50F2C35F1DCC1D5A000B23CA;
@@ -650,7 +651,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 45Z84TYU2C;
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -668,7 +669,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 45Z84TYU2C;
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -685,7 +686,7 @@
 			baseConfigurationReference = C91508FE15D5F74DCC7CAEED /* Pods-SearchGitHubAPITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 37665QUBTY;
+				DEVELOPMENT_TEAM = 45Z84TYU2C;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.SearchGitHubAPITests;
@@ -701,7 +702,7 @@
 			baseConfigurationReference = DC25B022549BD5C6686B8A75 /* Pods-SearchGitHubAPITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 37665QUBTY;
+				DEVELOPMENT_TEAM = 45Z84TYU2C;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.SearchGitHubAPITests;

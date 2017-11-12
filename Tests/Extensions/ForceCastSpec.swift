@@ -1,4 +1,4 @@
-import SearchGitHubAPI
+@testable import SearchGitHubAPI
 import Nimble
 import Quick
 
@@ -23,4 +23,3 @@ internal class ForceCastSpec: QuickSpec {
     }
 
 }
-
