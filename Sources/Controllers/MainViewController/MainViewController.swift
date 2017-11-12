@@ -16,7 +16,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         view = MainView()
     }
 
-    @IBOutlet weak var tableView: UITableView!
     public var dataProvider: MockDataProviderProtocol?
 
     enum CellType: String {
@@ -49,15 +48,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     func tableViewPreSetup() {
 
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
+        mainView.tableView.rowHeight = UITableViewAutomaticDimension
+        mainView.tableView.estimatedRowHeight = 100
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let reusableCell = self.tableView.dequeueReusableCell(withIdentifier: "CustomGITCell", for: indexPath) as! CustomGITCell
+        let reusableCell = mainView.tableView.dequeueReusableCell(withIdentifier: "CustomGITCell", for: indexPath) as! CustomGITCell
 
         let cellData = cellsData[indexPath.row]
         switch cellData.keys.first! {
@@ -133,7 +132,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             DispatchQueue.main.async {
                 MBProgressHUD.hide(for: self.view, animated: true)
             }
-            self.tableView.reloadData()
+
+            self.mainView.tableView.reloadData()
 
         }, error: { error -> Void in
 
@@ -153,7 +153,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print("login: \(user.login)")
                 print("url: \(user.repoURL)")
             }
-            self.tableView.reloadData()
+            self.mainView.tableView.reloadData()
         }) { error in
             print(error)
         }
@@ -180,37 +180,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-}
-
-extension MainViewController: UISearchBarDelegate {
-
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        searchBar.setShowsCancelButton(true, animated: true)
-        return true
-    }
-
-    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-
-        searchBar.setShowsCancelButton(false, animated: true)
-        return true
-    }
-
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-
-        searchBar.text = ""
-        searchBar.resignFirstResponder()
-    }
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        startSearch(withText: searchBar.text ?? "")
-    }
-
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        startSearch(withText: searchText)
-
     }
 
 }
