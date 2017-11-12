@@ -18,6 +18,10 @@
 		509F6E131FB854870084F7A8 /* MainViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E121FB854870084F7A8 /* MainViewController+TableViewDelegate.swift */; };
 		509F6E151FB854EC0084F7A8 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E141FB854EC0084F7A8 /* CustomCell.swift */; };
 		509F6E171FB855A20084F7A8 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E161FB855A20084F7A8 /* CellView.swift */; };
+		509F6E191FB873F00084F7A8 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E181FB873F00084F7A8 /* UITableView+Reusable.swift */; };
+		509F6E1B1FB8745A0084F7A8 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E1A1FB8745A0084F7A8 /* Reusable.swift */; };
+		509F6E1D1FB874830084F7A8 /* UITableViewCell+Resuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E1C1FB874830084F7A8 /* UITableViewCell+Resuable.swift */; };
+		509F6E201FB875180084F7A8 /* UITableViewCell_Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E1E1FB875080084F7A8 /* UITableViewCell_Reusable.swift */; };
 		50F2C3641DCC1D5A000B23CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2C3631DCC1D5A000B23CA /* AppDelegate.swift */; };
 		50F2C3661DCC1D5A000B23CA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2C3651DCC1D5A000B23CA /* MainViewController.swift */; };
 		50F2C36C1DCC1D5A000B23CA /* SearchGitHubAPI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50F2C36A1DCC1D5A000B23CA /* SearchGitHubAPI.xcdatamodeld */; };
@@ -58,6 +62,10 @@
 		509F6E121FB854870084F7A8 /* MainViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		509F6E141FB854EC0084F7A8 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		509F6E161FB855A20084F7A8 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		509F6E181FB873F00084F7A8 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		509F6E1A1FB8745A0084F7A8 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		509F6E1C1FB874830084F7A8 /* UITableViewCell+Resuable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Resuable.swift"; sourceTree = "<group>"; };
+		509F6E1E1FB875080084F7A8 /* UITableViewCell_Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell_Reusable.swift; sourceTree = "<group>"; };
 		50F2C3601DCC1D5A000B23CA /* SearchGitHubAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchGitHubAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F2C3631DCC1D5A000B23CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F2C3651DCC1D5A000B23CA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -123,9 +131,9 @@
 		505CE5971DD04B37002BA48F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				509F6E111FB8546E0084F7A8 /* MainViewController */,
 				505CE5951DD041B8002BA48F /* CustomGITCell.swift */,
 				505CE5A21DD11B43002BA48F /* DetailViewController.swift */,
-				509F6E111FB8546E0084F7A8 /* MainViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -141,9 +149,9 @@
 		509F6E081FB84ADE0084F7A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				509F6E091FB84AF60084F7A8 /* MainView.swift */,
-				509F6E141FB854EC0084F7A8 /* CustomCell.swift */,
 				509F6E161FB855A20084F7A8 /* CellView.swift */,
+				509F6E141FB854EC0084F7A8 /* CustomCell.swift */,
+				509F6E091FB84AF60084F7A8 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				509F6E0C1FB84B900084F7A8 /* ForceCastSpec.swift */,
+				509F6E1E1FB875080084F7A8 /* UITableViewCell_Reusable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -160,6 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				509F6E0F1FB84C060084F7A8 /* ForceCast.swift */,
+				509F6E1A1FB8745A0084F7A8 /* Reusable.swift */,
+				509F6E181FB873F00084F7A8 /* UITableView+Reusable.swift */,
+				509F6E1C1FB874830084F7A8 /* UITableViewCell+Resuable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,8 +179,8 @@
 		509F6E111FB8546E0084F7A8 /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
-				50F2C3651DCC1D5A000B23CA /* MainViewController.swift */,
 				509F6E121FB854870084F7A8 /* MainViewController+TableViewDelegate.swift */,
+				50F2C3651DCC1D5A000B23CA /* MainViewController.swift */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -518,10 +530,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509F6E1B1FB8745A0084F7A8 /* Reusable.swift in Sources */,
 				50F2C3661DCC1D5A000B23CA /* MainViewController.swift in Sources */,
 				509F6E0A1FB84AF60084F7A8 /* MainView.swift in Sources */,
 				505CE5941DD02D0F002BA48F /* GitHubAPIConditions.swift in Sources */,
 				50F2C36C1DCC1D5A000B23CA /* SearchGitHubAPI.xcdatamodeld in Sources */,
+				509F6E191FB873F00084F7A8 /* UITableView+Reusable.swift in Sources */,
+				509F6E1D1FB874830084F7A8 /* UITableViewCell+Resuable.swift in Sources */,
 				50F2C3641DCC1D5A000B23CA /* AppDelegate.swift in Sources */,
 				509F6E131FB854870084F7A8 /* MainViewController+TableViewDelegate.swift in Sources */,
 				509F6E101FB84C060084F7A8 /* ForceCast.swift in Sources */,
@@ -541,6 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5F032101DD3A97E00374CC4 /* SearchGitHubAPITests.swift in Sources */,
+				509F6E201FB875180084F7A8 /* UITableViewCell_Reusable.swift in Sources */,
 				509F6E0D1FB84B900084F7A8 /* ForceCastSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

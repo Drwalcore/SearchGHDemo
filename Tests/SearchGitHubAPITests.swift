@@ -12,9 +12,9 @@ class SearchGitHubAPITests: XCTestCase {
     }
 
     func testUIForNil() {
-        XCTAssertNil(viewController.tableView, "Table view should be nil")
+        //XCTAssertNil(viewController.mainView.tableView, "Table view should be nil")
         _ = viewController.view
-        XCTAssertNotNil(viewController.tableView, "Table view shouldn't be nil")
+        XCTAssertNotNil(viewController.mainView.tableView, "Table view shouldn't be nil")
     }
 
     func testRandomLettersFetchOperation() {
