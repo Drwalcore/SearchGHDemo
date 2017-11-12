@@ -4,7 +4,7 @@ import UIKit
 
 class SearchGitHubAPITests: XCTestCase {
 
-    var viewController: ViewController!
+    var viewController: MainViewController!
 
     override func setUp() {
         super.setUp()

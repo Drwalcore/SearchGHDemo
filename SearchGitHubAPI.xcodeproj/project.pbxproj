@@ -12,9 +12,9 @@
 		505CE5961DD041B8002BA48F /* CustomGITCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE5951DD041B8002BA48F /* CustomGITCell.swift */; };
 		505CE5A31DD11B43002BA48F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE5A21DD11B43002BA48F /* DetailViewController.swift */; };
 		505CE5A61DD11C39002BA48F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 505CE5A51DD11C39002BA48F /* star.png */; };
-		509F6E071FB848950084F7A8 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E061FB848950084F7A8 /* NavigationViewController.swift */; };
 		509F6E0A1FB84AF60084F7A8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E091FB84AF60084F7A8 /* MainView.swift */; };
 		509F6E0D1FB84B900084F7A8 /* ForceCastSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E0C1FB84B900084F7A8 /* ForceCastSpec.swift */; };
+		509F6E101FB84C060084F7A8 /* ForceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E0F1FB84C060084F7A8 /* ForceCast.swift */; };
 		50F2C3641DCC1D5A000B23CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2C3631DCC1D5A000B23CA /* AppDelegate.swift */; };
 		50F2C3661DCC1D5A000B23CA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2C3651DCC1D5A000B23CA /* MainViewController.swift */; };
 		50F2C36C1DCC1D5A000B23CA /* SearchGitHubAPI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50F2C36A1DCC1D5A000B23CA /* SearchGitHubAPI.xcdatamodeld */; };
@@ -49,9 +49,9 @@
 		505CE5951DD041B8002BA48F /* CustomGITCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGITCell.swift; sourceTree = "<group>"; };
 		505CE5A21DD11B43002BA48F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		505CE5A51DD11C39002BA48F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
-		509F6E061FB848950084F7A8 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		509F6E091FB84AF60084F7A8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		509F6E0C1FB84B900084F7A8 /* ForceCastSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForceCastSpec.swift; path = Tests/ForceCastSpec.swift; sourceTree = SOURCE_ROOT; };
+		509F6E0C1FB84B900084F7A8 /* ForceCastSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForceCastSpec.swift; path = ForceCastSpec.swift; sourceTree = "<group>"; };
+		509F6E0F1FB84C060084F7A8 /* ForceCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceCast.swift; sourceTree = "<group>"; };
 		50F2C3601DCC1D5A000B23CA /* SearchGitHubAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchGitHubAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F2C3631DCC1D5A000B23CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F2C3651DCC1D5A000B23CA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -114,15 +114,14 @@
 			path = GitHub;
 			sourceTree = "<group>";
 		};
-		505CE5971DD04B37002BA48F /* ViewControllers */ = {
+		505CE5971DD04B37002BA48F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				505CE5951DD041B8002BA48F /* CustomGITCell.swift */,
 				505CE5A21DD11B43002BA48F /* DetailViewController.swift */,
 				50F2C3651DCC1D5A000B23CA /* MainViewController.swift */,
-				509F6E061FB848950084F7A8 /* NavigationViewController.swift */,
 			);
-			path = ViewControllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		505CE5A41DD11C22002BA48F /* Additional Images */ = {
@@ -149,14 +148,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		509F6E0E1FB84BEA0084F7A8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				509F6E0F1FB84C060084F7A8 /* ForceCast.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		50F2C3571DCC1D5A000B23CA = {
 			isa = PBXGroup;
 			children = (
+				99100E564F7F9A0AF6DE9C44 /* Frameworks */,
+				9D8A5BB573A30039612F1DB0 /* Pods */,
 				50F2C3611DCC1D5A000B23CA /* Products */,
 				50F2C3621DCC1D5A000B23CA /* Sources */,
 				F5F0320E1DD3A97E00374CC4 /* Tests */,
-				9D8A5BB573A30039612F1DB0 /* Pods */,
-				99100E564F7F9A0AF6DE9C44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,11 +179,12 @@
 		50F2C3621DCC1D5A000B23CA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				509F6E081FB84ADE0084F7A8 /* Views */,
+				505CE5971DD04B37002BA48F /* Controllers */,
+				509F6E0E1FB84BEA0084F7A8 /* Extensions */,
 				505CE5911DD0291E002BA48F /* GitHub */,
 				F5F031F61DD2A36A00374CC4 /* Models */,
 				505CE58D1DD02875002BA48F /* Supporting Files */,
-				505CE5971DD04B37002BA48F /* ViewControllers */,
+				509F6E081FB84ADE0084F7A8 /* Views */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -494,10 +502,10 @@
 			files = (
 				50F2C3661DCC1D5A000B23CA /* MainViewController.swift in Sources */,
 				509F6E0A1FB84AF60084F7A8 /* MainView.swift in Sources */,
-				509F6E071FB848950084F7A8 /* NavigationViewController.swift in Sources */,
 				505CE5941DD02D0F002BA48F /* GitHubAPIConditions.swift in Sources */,
 				50F2C36C1DCC1D5A000B23CA /* SearchGitHubAPI.xcdatamodeld in Sources */,
 				50F2C3641DCC1D5A000B23CA /* AppDelegate.swift in Sources */,
+				509F6E101FB84C060084F7A8 /* ForceCast.swift in Sources */,
 				505CE5901DD02915002BA48F /* GitHubAPI.swift in Sources */,
 				F5F031F81DD2A37B00374CC4 /* User.swift in Sources */,
 				505CE5961DD041B8002BA48F /* CustomGITCell.swift in Sources */,
