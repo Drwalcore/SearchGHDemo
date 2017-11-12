@@ -6,6 +6,16 @@ import MBProgressHUD
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // MARK: - Initializer
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    override func loadView() {
+        view = MainView()
+    }
+
     @IBOutlet weak var tableView: UITableView!
     public var dataProvider: MockDataProviderProtocol?
 
@@ -161,6 +171,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
     }
+
+    // MARK: - View Configuration
+
+    var mainView: MainView { return forceCast(view) }
+
+    // MARK: - Required initializer
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
 }
 
 extension MainViewController: UISearchBarDelegate {
