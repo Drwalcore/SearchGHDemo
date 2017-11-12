@@ -4,11 +4,11 @@ import UIKit
 
 class SearchGitHubAPITests: XCTestCase {
 
-    var viewController: MainViewController!
+    var viewController: ViewController!
 
     override func setUp() {
         super.setUp()
-        viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        viewController = MainViewController()
     }
 
     func testUIForNil() {
