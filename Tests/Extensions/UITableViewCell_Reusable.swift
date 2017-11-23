@@ -15,4 +15,3 @@ class UITableViewCell_ReusableSpec: QuickSpec {
     }
 
 }
-

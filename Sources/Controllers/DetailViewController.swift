@@ -27,8 +27,10 @@ class DetailViewController: UIViewController {
         guard let linkVal = link else {
             return
         }
-        let url = URL(string: linkVal)
-        Avatar.setImageWith(url!)
+        guard let url = URL(string: linkVal) else {
+            fatalError("Error getting URL from string")
+        }
+        Avatar.setImageWith(url)
     }
 
     override func viewDidLoad() {
@@ -66,7 +68,10 @@ class DetailViewController: UIViewController {
         linkButton.isHidden = true
         RepoDescription.text = repoVal.description
         StarsNumber.text = "\(repoVal.stars ?? 0)"+" x"
-        RepoName.text = "Repository name: " + (repoVal.name)!
+        guard let text = repoVal.name else {
+            fatalError("Couldn't convert repoVal.name to string")
+        }
+        RepoName.text = "Repository name: " + text
         OwnerName.text = repoVal.ownerLogin
         downloadImage(link: repoVal.ownerAvatarURL)
     }
@@ -80,8 +85,11 @@ class DetailViewController: UIViewController {
 
     @IBAction func linkButtonPressed(_ sender: AnyObject) {
 
-        let link = URL(string: user!.repoURL!)
-        UIApplication.shared.open(link!,
+        guard let user = user, let repoURLString = user.repoURL, let link = URL(string: repoURLString ) else {
+            fatalError("either user, or repoURL or link were nil!")
+        }
+
+        UIApplication.shared.open(link,
                                   options: [:],
                                   completionHandler: nil)
     }

@@ -5,4 +5,3 @@ public func forceCast<T>(_ object: Any) -> T {
 
     return casted
 }
-

@@ -20,7 +20,7 @@ class CellView: UIView {
     }
 
     private func configureAutolayout() {
-        
+
     }
 
     // MARK: - Properties
@@ -34,4 +34,3 @@ class CellView: UIView {
     }
 
 }
-
