@@ -4,9 +4,18 @@ import MBProgressHUD
 
 // swiftlint:disable force_cast
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var tableView: UITableView!
+    // MARK: - Initializer
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    override func loadView() {
+        view = MainView()
+    }
+
     public var dataProvider: MockDataProviderProtocol?
 
     enum CellType: String {
@@ -39,15 +48,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableViewPreSetup() {
 
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
+        mainView.tableView.rowHeight = UITableViewAutomaticDimension
+        mainView.tableView.estimatedRowHeight = 100
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let reusableCell = self.tableView.dequeueReusableCell(withIdentifier: "CustomGITCell", for: indexPath) as! CustomGITCell
+        let reusableCell = mainView.tableView.dequeueReusableCell(withIdentifier: "CustomGITCell", for: indexPath) as! CustomGITCell
 
         let cellData = cellsData[indexPath.row]
         switch cellData.keys.first! {
@@ -123,7 +132,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             DispatchQueue.main.async {
                 MBProgressHUD.hide(for: self.view, animated: true)
             }
-            self.tableView.reloadData()
+
+            self.mainView.tableView.reloadData()
 
         }, error: { error -> Void in
 
@@ -143,7 +153,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print("login: \(user.login)")
                 print("url: \(user.repoURL)")
             }
-            self.tableView.reloadData()
+            self.mainView.tableView.reloadData()
         }) { error in
             print(error)
         }
@@ -161,35 +171,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
-}
 
-extension ViewController: UISearchBarDelegate {
+    // MARK: - View Configuration
 
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        searchBar.setShowsCancelButton(true, animated: true)
-        return true
-    }
+    var mainView: MainView { return forceCast(view) }
 
-    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+    // MARK: - Required initializer
 
-        searchBar.setShowsCancelButton(false, animated: true)
-        return true
-    }
-
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-
-        searchBar.text = ""
-        searchBar.resignFirstResponder()
-    }
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        startSearch(withText: searchBar.text ?? "")
-    }
-
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        startSearch(withText: searchText)
-
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
 }

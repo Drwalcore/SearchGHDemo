@@ -12,9 +12,18 @@
 		505CE5961DD041B8002BA48F /* CustomGITCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE5951DD041B8002BA48F /* CustomGITCell.swift */; };
 		505CE5A31DD11B43002BA48F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CE5A21DD11B43002BA48F /* DetailViewController.swift */; };
 		505CE5A61DD11C39002BA48F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 505CE5A51DD11C39002BA48F /* star.png */; };
+		509F6E0A1FB84AF60084F7A8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E091FB84AF60084F7A8 /* MainView.swift */; };
+		509F6E0D1FB84B900084F7A8 /* ForceCastSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E0C1FB84B900084F7A8 /* ForceCastSpec.swift */; };
+		509F6E101FB84C060084F7A8 /* ForceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E0F1FB84C060084F7A8 /* ForceCast.swift */; };
+		509F6E131FB854870084F7A8 /* MainViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E121FB854870084F7A8 /* MainViewController+TableViewDelegate.swift */; };
+		509F6E151FB854EC0084F7A8 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E141FB854EC0084F7A8 /* CustomCell.swift */; };
+		509F6E171FB855A20084F7A8 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E161FB855A20084F7A8 /* CellView.swift */; };
+		509F6E191FB873F00084F7A8 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E181FB873F00084F7A8 /* UITableView+Reusable.swift */; };
+		509F6E1B1FB8745A0084F7A8 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E1A1FB8745A0084F7A8 /* Reusable.swift */; };
+		509F6E1D1FB874830084F7A8 /* UITableViewCell+Resuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E1C1FB874830084F7A8 /* UITableViewCell+Resuable.swift */; };
+		509F6E201FB875180084F7A8 /* UITableViewCell_Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F6E1E1FB875080084F7A8 /* UITableViewCell_Reusable.swift */; };
 		50F2C3641DCC1D5A000B23CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2C3631DCC1D5A000B23CA /* AppDelegate.swift */; };
-		50F2C3661DCC1D5A000B23CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2C3651DCC1D5A000B23CA /* ViewController.swift */; };
-		50F2C3691DCC1D5A000B23CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F2C3671DCC1D5A000B23CA /* Main.storyboard */; };
+		50F2C3661DCC1D5A000B23CA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2C3651DCC1D5A000B23CA /* MainViewController.swift */; };
 		50F2C36C1DCC1D5A000B23CA /* SearchGitHubAPI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50F2C36A1DCC1D5A000B23CA /* SearchGitHubAPI.xcdatamodeld */; };
 		50F2C36E1DCC1D5A000B23CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50F2C36D1DCC1D5A000B23CA /* Assets.xcassets */; };
 		50F2C3711DCC1D5A000B23CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F2C36F1DCC1D5A000B23CA /* LaunchScreen.storyboard */; };
@@ -47,10 +56,19 @@
 		505CE5951DD041B8002BA48F /* CustomGITCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGITCell.swift; sourceTree = "<group>"; };
 		505CE5A21DD11B43002BA48F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		505CE5A51DD11C39002BA48F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		509F6E091FB84AF60084F7A8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		509F6E0C1FB84B900084F7A8 /* ForceCastSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceCastSpec.swift; sourceTree = "<group>"; };
+		509F6E0F1FB84C060084F7A8 /* ForceCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceCast.swift; sourceTree = "<group>"; };
+		509F6E121FB854870084F7A8 /* MainViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
+		509F6E141FB854EC0084F7A8 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		509F6E161FB855A20084F7A8 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		509F6E181FB873F00084F7A8 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		509F6E1A1FB8745A0084F7A8 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		509F6E1C1FB874830084F7A8 /* UITableViewCell+Resuable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Resuable.swift"; sourceTree = "<group>"; };
+		509F6E1E1FB875080084F7A8 /* UITableViewCell_Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell_Reusable.swift; sourceTree = "<group>"; };
 		50F2C3601DCC1D5A000B23CA /* SearchGitHubAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchGitHubAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F2C3631DCC1D5A000B23CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50F2C3651DCC1D5A000B23CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		50F2C3681DCC1D5A000B23CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		50F2C3651DCC1D5A000B23CA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		50F2C36B1DCC1D5A000B23CA /* SearchGitHubAPI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchGitHubAPI.xcdatamodel; sourceTree = "<group>"; };
 		50F2C36D1DCC1D5A000B23CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50F2C3701DCC1D5A000B23CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,14 +117,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		505CE58E1DD02888002BA48F /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				50F2C3671DCC1D5A000B23CA /* Main.storyboard */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
 		505CE5911DD0291E002BA48F /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,14 +128,14 @@
 			path = GitHub;
 			sourceTree = "<group>";
 		};
-		505CE5971DD04B37002BA48F /* Views */ = {
+		505CE5971DD04B37002BA48F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				509F6E111FB8546E0084F7A8 /* MainViewController */,
 				505CE5951DD041B8002BA48F /* CustomGITCell.swift */,
 				505CE5A21DD11B43002BA48F /* DetailViewController.swift */,
-				50F2C3651DCC1D5A000B23CA /* ViewController.swift */,
 			);
-			path = Views;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		505CE5A41DD11C22002BA48F /* Additional Images */ = {
@@ -136,14 +146,53 @@
 			path = "Additional Images";
 			sourceTree = "<group>";
 		};
+		509F6E081FB84ADE0084F7A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				509F6E161FB855A20084F7A8 /* CellView.swift */,
+				509F6E141FB854EC0084F7A8 /* CustomCell.swift */,
+				509F6E091FB84AF60084F7A8 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		509F6E0B1FB84B7A0084F7A8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				509F6E0C1FB84B900084F7A8 /* ForceCastSpec.swift */,
+				509F6E1E1FB875080084F7A8 /* UITableViewCell_Reusable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		509F6E0E1FB84BEA0084F7A8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				509F6E0F1FB84C060084F7A8 /* ForceCast.swift */,
+				509F6E1A1FB8745A0084F7A8 /* Reusable.swift */,
+				509F6E181FB873F00084F7A8 /* UITableView+Reusable.swift */,
+				509F6E1C1FB874830084F7A8 /* UITableViewCell+Resuable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		509F6E111FB8546E0084F7A8 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				509F6E121FB854870084F7A8 /* MainViewController+TableViewDelegate.swift */,
+				50F2C3651DCC1D5A000B23CA /* MainViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
 		50F2C3571DCC1D5A000B23CA = {
 			isa = PBXGroup;
 			children = (
+				99100E564F7F9A0AF6DE9C44 /* Frameworks */,
+				9D8A5BB573A30039612F1DB0 /* Pods */,
 				50F2C3611DCC1D5A000B23CA /* Products */,
 				50F2C3621DCC1D5A000B23CA /* Sources */,
 				F5F0320E1DD3A97E00374CC4 /* Tests */,
-				9D8A5BB573A30039612F1DB0 /* Pods */,
-				99100E564F7F9A0AF6DE9C44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,11 +208,12 @@
 		50F2C3621DCC1D5A000B23CA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				505CE5971DD04B37002BA48F /* Controllers */,
+				509F6E0E1FB84BEA0084F7A8 /* Extensions */,
 				505CE5911DD0291E002BA48F /* GitHub */,
 				F5F031F61DD2A36A00374CC4 /* Models */,
-				505CE58E1DD02888002BA48F /* Storyboards */,
 				505CE58D1DD02875002BA48F /* Supporting Files */,
-				505CE5971DD04B37002BA48F /* Views */,
+				509F6E081FB84ADE0084F7A8 /* Views */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -199,6 +249,7 @@
 		F5F0320E1DD3A97E00374CC4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				509F6E0B1FB84B7A0084F7A8 /* Extensions */,
 				F5F032111DD3A97E00374CC4 /* Info.plist */,
 				F5F0320F1DD3A97E00374CC4 /* SearchGitHubAPITests.swift */,
 			);
@@ -258,17 +309,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Michał Czerniakowski";
 				TargetAttributes = {
 					50F2C35F1DCC1D5A000B23CA = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 45Z84TYU2C;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					F5F0320C1DD3A97D00374CC4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 37665QUBTY;
+						DevelopmentTeam = 45Z84TYU2C;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 50F2C35F1DCC1D5A000B23CA;
@@ -302,7 +354,6 @@
 				50F2C3711DCC1D5A000B23CA /* LaunchScreen.storyboard in Resources */,
 				505CE5A61DD11C39002BA48F /* star.png in Resources */,
 				50F2C36E1DCC1D5A000B23CA /* Assets.xcassets in Resources */,
-				50F2C3691DCC1D5A000B23CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,15 +530,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50F2C3661DCC1D5A000B23CA /* ViewController.swift in Sources */,
+				509F6E1B1FB8745A0084F7A8 /* Reusable.swift in Sources */,
+				50F2C3661DCC1D5A000B23CA /* MainViewController.swift in Sources */,
+				509F6E0A1FB84AF60084F7A8 /* MainView.swift in Sources */,
 				505CE5941DD02D0F002BA48F /* GitHubAPIConditions.swift in Sources */,
 				50F2C36C1DCC1D5A000B23CA /* SearchGitHubAPI.xcdatamodeld in Sources */,
+				509F6E191FB873F00084F7A8 /* UITableView+Reusable.swift in Sources */,
+				509F6E1D1FB874830084F7A8 /* UITableViewCell+Resuable.swift in Sources */,
 				50F2C3641DCC1D5A000B23CA /* AppDelegate.swift in Sources */,
+				509F6E131FB854870084F7A8 /* MainViewController+TableViewDelegate.swift in Sources */,
+				509F6E101FB84C060084F7A8 /* ForceCast.swift in Sources */,
 				505CE5901DD02915002BA48F /* GitHubAPI.swift in Sources */,
 				F5F031F81DD2A37B00374CC4 /* User.swift in Sources */,
 				505CE5961DD041B8002BA48F /* CustomGITCell.swift in Sources */,
 				F5F031F41DD2A10A00374CC4 /* GitHubAPIUsers.swift in Sources */,
+				509F6E171FB855A20084F7A8 /* CellView.swift in Sources */,
 				505CE5A31DD11B43002BA48F /* DetailViewController.swift in Sources */,
+				509F6E151FB854EC0084F7A8 /* CustomCell.swift in Sources */,
 				F5F0321A1DD3BA8D00374CC4 /* MockDataProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +556,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5F032101DD3A97E00374CC4 /* SearchGitHubAPITests.swift in Sources */,
+				509F6E201FB875180084F7A8 /* UITableViewCell_Reusable.swift in Sources */,
+				509F6E0D1FB84B900084F7A8 /* ForceCastSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,15 +572,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		50F2C3671DCC1D5A000B23CA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				50F2C3681DCC1D5A000B23CA /* Base */,
-			);
-			name = Main.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
 		50F2C36F1DCC1D5A000B23CA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -541,7 +593,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -549,7 +603,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -593,7 +651,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -601,7 +661,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -635,7 +699,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 45Z84TYU2C;
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -653,7 +717,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 45Z84TYU2C;
 				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -670,7 +734,7 @@
 			baseConfigurationReference = C91508FE15D5F74DCC7CAEED /* Pods-SearchGitHubAPITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 37665QUBTY;
+				DEVELOPMENT_TEAM = 45Z84TYU2C;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.SearchGitHubAPITests;
@@ -686,7 +750,7 @@
 			baseConfigurationReference = DC25B022549BD5C6686B8A75 /* Pods-SearchGitHubAPITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 37665QUBTY;
+				DEVELOPMENT_TEAM = 45Z84TYU2C;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.SearchGitHubAPITests;

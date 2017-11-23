@@ -55,7 +55,7 @@ class GitHubAPI {
         let manager = AFHTTPRequestOperationManager()
         let params = queryParamsWithSettings(settings: settings)
 
-        let operation = manager.get(gitRepoURL, parameters: params, success: { operation, responseObject -> Void in
+        let operation = manager.get(gitRepoURL, parameters: params, success: { _, responseObject -> Void in
 
             if let fetchResults = (responseObject as AnyObject)["items"] as? NSArray {
 
@@ -84,7 +84,7 @@ class GitHubAPI {
 
         let operation = manager.get(gitUserURL,
                     parameters: parameters,
-                    success: { operation, responseObject in
+                    success: { _, responseObject in
 
                         if let fetchResults = (responseObject as AnyObject)["items"] as? [[String: AnyObject]] {
 

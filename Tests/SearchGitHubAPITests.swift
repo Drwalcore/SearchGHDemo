@@ -4,17 +4,17 @@ import UIKit
 
 class SearchGitHubAPITests: XCTestCase {
 
-    var viewController: ViewController!
+    var viewController: MainViewController!
 
     override func setUp() {
         super.setUp()
-        viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        viewController = MainViewController()
     }
 
     func testUIForNil() {
-        XCTAssertNil(viewController.tableView, "Table view should be nil")
+        //XCTAssertNil(viewController.mainView.tableView, "Table view should be nil")
         _ = viewController.view
-        XCTAssertNotNil(viewController.tableView, "Table view shouldn't be nil")
+        XCTAssertNotNil(viewController.mainView.tableView, "Table view shouldn't be nil")
     }
 
     func testRandomLettersFetchOperation() {
